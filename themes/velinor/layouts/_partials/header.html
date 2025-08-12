@@ -1,0 +1,24 @@
+<header class="p-4 max-w-screen-xl m-auto">
+  <div class="border-b-2 border-black flex gap-4 justify-between pb-4 items-center">
+    <a class="lg:w-1/4" href="{{ .Site.BaseURL }}">
+      <img src="/header-logo.svg" alt={{.Site.Title}} />
+    </a>  
+
+    {{ partial "menu-header.html" (dict "menuID" "main" "page" .) }}
+    
+    <nav class="hidden lg:block lg:w-1/4 lg:text-right">
+      <a class="uppercase font-bold inline-flex gap-2 group hover:text-vc-brown-2 transition-colors duration-200" href="#contact">
+        <span>
+          <span class="italic opacity-0 group-hover:opacity-25 transition-opacity duration-200">I</span><span class="italic opacity-0 group-hover:opacity-50 transition-opacity duration-200">I</span><span class="italic">I</span>
+        </span>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <button class="lg:hidden">
+      <img class="block" src="/icons/hamburger.svg" alt="Open menu" />
+      <img class="hidden" src="/icons/close-menu.svg" alt="Close menu" />
+    </button>
+  </div>
+  
+</header>

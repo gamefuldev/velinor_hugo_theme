@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+
+@font-face {
+    font-family: 'LensGrotesk';
+    src: url('/fonts/lens-grotesk/LensGroteskW05-Regular.eot');
+    src: local('Lens Grotesk W05 Regular'), local('LensGroteskW05-Regular'),
+        url('/fonts/lens-grotesk/LensGroteskW05-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lens-grotesk/LensGroteskW05-Regular.woff2') format('woff2'),
+        url('/fonts/lens-grotesk/LensGroteskW05-Regular.woff') format('woff'),
+        url('/fonts/lens-grotesk/LensGroteskW05-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LensGrotesk';
+    src: url('/fonts/lens-grotesk/LensGrotesk-Medium.eot');
+    src: local('Lens Grotesk Medium'), local('LensGrotesk-Medium'),
+        url('/fonts/lens-grotesk/LensGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lens-grotesk/LensGrotesk-Medium.woff2') format('woff2'),
+        url('/fonts/lens-grotesk/LensGrotesk-Medium.woff') format('woff'),
+        url('/fonts/lens-grotesk/LensGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LensGrotesk';
+    src: url('/fonts/lens-grotesk/LensGrotesk-Bold.eot');
+    src: local('Lens Grotesk Bold'), local('LensGrotesk-Bold'),
+        url('/fonts/lens-grotesk/LensGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lens-grotesk/LensGrotesk-Bold.woff2') format('woff2'),
+        url('/fonts/lens-grotesk/LensGrotesk-Bold.woff') format('woff'),
+        url('/fonts/lens-grotesk/LensGrotesk-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LensGrotesk';
+    src: url('/fonts/lens-grotesk/LensGrotesk-BoldItalic.eot');
+    src: local('Lens Grotesk Bold Italic'), local('LensGrotesk-BoldItalic'),
+        url('/fonts/lens-grotesk/LensGrotesk-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lens-grotesk/LensGrotesk-BoldItalic.woff2') format('woff2'),
+        url('/fonts/lens-grotesk/LensGrotesk-BoldItalic.woff') format('woff'),
+        url('/fonts/lens-grotesk/LensGrotesk-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@theme {
+  --color-vc-brown-1: #C2AF9E;
+  --color-vc-brown-2: #B59E89;
+  --color-vc-cream-1: #FBF8EF;
+  --color-vc-cream-2: #F0EDE3;
+  --color-vc-off-black-1: #1F1E1C;
+  --color-vc-off-black-2: #141412;
+  --color-vc-off-white-1: #FBF8EF;
+  --font-lens: "LensGrotesk", sans-serif;
+}

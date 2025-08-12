@@ -1,0 +1,20 @@
+<footer class="bg-vc-off-black-2">
+  <div class="p-4 pt-8 max-w-screen-xl m-auto text-vc-off-white-1 text-center">
+  
+    {{ partial "menu-footer.html" (dict "menuID" "main" "page" .) }}
+
+    <div class="uppercase font-bold opacity-50 flex flex-col lg:flex-row gap-8 justify-center my-8">
+      {{ partial "menu-footer.html" (dict "menuID" "legal" "page" .) }}
+      <p>General Inquiries: <a class="hover:text-vc-brown-2 transition-colors duration-200" href="mailto:{{.Site.Params.ContactEmail}}">{{.Site.Params.ContactEmail}}</a></p>
+      <p>&copy; {{.Site.Title }} {{ now.Year }}</p>
+    </div>
+
+    <div class="my-12">
+      <img class="w-full h-auto block md:hidden" src="/footer-logo-mobile.svg" alt="" />
+      <img class="w-full h-auto hidden md:block" src="/footer-logo-desktop.svg" alt="" />
+    </div>
+
+  </div>
+</footer>
+
+

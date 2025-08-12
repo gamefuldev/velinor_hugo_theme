@@ -1,0 +1,34 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'Velinor Capital'
+
+[menus]
+  [[menus.main]]
+    name = 'About'
+    URL = '#about'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Strategy'
+    URL = '#strategy'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Leadership'
+    URL = '#leadership'
+    weight = 30
+
+  [[menus.legal]]
+    name = 'Terms and conditions'
+    URL = '/terms-and-conditions'
+    weight = 10
+
+  [[menus.legal]]
+    name = 'Privacy policy'
+    URL = '/privacy-policy'
+    weight = 20
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
