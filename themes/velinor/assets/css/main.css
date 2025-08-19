@@ -65,3 +65,16 @@
   --color-vc-off-white-1: #FBF8EF;
   --font-lens: "LensGrotesk", sans-serif;
 }
+
+@media screen and (min-width: 64rem) {
+    .js-strategy-heading {
+        writing-mode: sideways-rl;
+        text-orientation: sideways;
+    }
+
+    .js-strategy-heading.active {
+        writing-mode: initial;
+        
+        @apply text-5xl max-w-lg pt-0;
+    }
+}

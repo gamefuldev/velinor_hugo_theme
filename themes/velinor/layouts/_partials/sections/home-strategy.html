@@ -1,0 +1,73 @@
+<section id="strategy" class="bg-vc-cream-1">
+  <div class="max-w-screen-xl m-auto py-16 lg:py-32 px-4">
+    <h2 class="
+      text-center text-black text-2xl lg:text-5xl upppercase font-bold uppercase relative 
+      before:content-['II'] before:absolute before:top-0 before:left-0 before:italic before:text-sm lg:before:text-3xl
+    ">Vel<span class="italic">i</span>nor Strategy</h2>
+  
+    <div id="js-strategy-toggle-area" class="flex flex-col lg:flex-row lg:gap-8 mt-16 lg:mt-32 relative">
+
+      {{ $counter := 0 }}
+      {{ range .Site.Data.strategy }}
+        {{ $counter = add $counter 1 }}
+
+        {{ if eq $counter 1 }}
+
+          <div class="js-strategy-item border-t lg:border-t-0 lg:border-r border-vc-off-black-1">
+            <div class="js-heading-wrapper flex lg:flex-col gap-4 justify-between items-center lg:pr-8 lg:items-start w-full">
+              <h3 class="
+                js-strategy-heading active uppercase font-bold text-black text-2xl w-2/3 lg:w-full lg:max-h-96 py-8 lg:py-0 flex items-center
+                after:content-['_+'] after:text-black after:font-normal after:opacity-0 lg:after:hidden
+                hover:text-black transition-colors cursor-pointer
+              ">{{ .heading }}</h3>
+              {{ $img := resources.Get (printf "img/strategy/%s" .image) }}
+              <img class="js-strategy-image w-16 h-16 object-cover opacity-0 lg:hidden" src="{{ $img.RelPermalink }}" alt="{{ .title }}">
+            </div>
+
+            <div class="js-strategy-content lg:pr-24 lg:pt-16">
+              <div class="order-3 prose text-black">
+                {{ .content }}
+              </div>
+              
+              <div class="
+                min-h-44 lg:min-h-[15rem] order-4 overflow-hidden font-bold text-white mt-8 mb-2 lg:mb-0 text-[200px] lg:text-[256px] relative opacity-90
+                after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-radial-[at_0%_100%] after:from-vc-cream-1/70 after:to-transparent
+              ">
+                <span class="absolute left-0 -bottom-16 lg:-bottom-24">{{ printf "%02d" $counter }}</span>
+              </div>
+            </div>
+          </div>
+
+        {{ else }}
+
+          <div class="js-strategy-item border-t lg:border-t-0 lg:border-r border-vc-off-black-1">
+            <div class="js-heading-wrapper flex lg:flex-col gap-4 justify-between items-center lg:pr-8 lg:items-start w-full h-full">
+              <h3 class="
+                js-strategy-heading uppercase font-bold text-vc-brown-2 text-2xl w-2/3 lg:w-full lg:max-h-96 py-8 lg:py-0 flex items-center
+                after:content-['_+'] after:text-black after:font-normal after:opacity-100 lg:after:hidden
+                hover:text-black transition-colors cursor-pointer
+              ">{{ .heading }}</h3>
+              {{ $img := resources.Get (printf "img/strategy/%s" .image) }}
+              <img class="js-strategy-image w-16 h-16 object-cover opacity-100 " src="{{ $img.RelPermalink }}" alt="{{ .title }}">
+            </div>
+
+            <div class="js-strategy-content lg:pr-24 lg:pt-16 hidden">
+              <div class="order-3 prose text-black">
+                {{ .content }}
+              </div>
+              
+              <div class="
+                min-h-44 lg:min-h-[15rem] order-4 overflow-hidden font-bold text-white mt-8 mb-2 lg:mb-0 text-[200px] lg:text-[256px] relative opacity-90
+                after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-radial-[at_0%_100%] after:from-vc-cream-1/70 after:to-transparent
+              ">
+                <span class="absolute left-0 -bottom-16 lg:-bottom-24">{{ printf "%02d" $counter }}</span>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+
+      {{ end }}
+      
+    </div>
+  </div>
+</section>

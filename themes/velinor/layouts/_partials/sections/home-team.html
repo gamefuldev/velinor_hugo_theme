@@ -5,11 +5,11 @@
       before:content-['III'] before:absolute before:top-0 before:left-0 before:italic before:text-sm lg:before:text-3xl
     ">Leadersh<span class="italic">i</span>p</h2>
   
-    <div class="flex flex-col lg:flex-row gap-8 mt-16 lg:mt-32">
+    <div class="flex flex-col md:flex-row gap-8 mt-16 lg:mt-32">
 
       {{ range .Site.Data.team }}
 
-        <div class="w-full lg:w-1/3 border-t border-vc-brown-2">
+        <div class="w-full md:w-1/3 border-t border-vc-brown-2">
           <div class="text-vc-brown-2 uppercase mt-6 text-sm">
             {{ $titleWords := split .title " " }}
             {{ range $titleWords }}
