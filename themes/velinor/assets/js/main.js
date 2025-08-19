@@ -14,6 +14,15 @@ menuToggle.addEventListener("click", () => {
   menuCloseIcon.classList.toggle("hidden");
 });
 
+const jumpToContactButton = document.getElementById("js-home-hero-contact");
+
+if (jumpToContactButton) {
+  jumpToContactButton.addEventListener("click", () => {
+    const contactForm = document.getElementById("contact");
+    contactForm.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
 const strategyToggle = document.getElementById("js-strategy-toggle-area");
 
 if (strategyToggle) {
