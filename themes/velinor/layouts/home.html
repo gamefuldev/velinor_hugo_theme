@@ -1,7 +1,12 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+
+  {{ $home_about_content := .Site.GetPage "/headless/home-about" }}
+  {{ $home_contact_content := .Site.GetPage "/headless/home-contact" }}
+
+  {{ partial "sections/home-hero.html" . }}
+  {{ partial "sections/home-about.html" $home_about_content }}
+  {{ partial "sections/home-strategy.html" . }}
+  {{ partial "sections/home-team.html" . }}
+  {{ partial "sections/home-contact.html" $home_contact_content }}
+
 {{ end }}
