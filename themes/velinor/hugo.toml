@@ -5,17 +5,17 @@ title = 'Velinor Capital'
 [menus]
   [[menus.main]]
     name = 'About'
-    URL = '#about'
+    URL = '/#about'
     weight = 10
 
   [[menus.main]]
     name = 'Strategy'
-    URL = '#strategy'
+    URL = '/#strategy'
     weight = 20
 
   [[menus.main]]
     name = 'Leadership'
-    URL = '#leadership'
+    URL = '/#leadership'
     weight = 30
 
   [[menus.legal]]

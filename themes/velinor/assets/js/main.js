@@ -12,6 +12,18 @@ menuToggle.addEventListener("click", () => {
   menuWrapper.classList.toggle("translate-x-0");
   menuOpenIcon.classList.toggle("hidden");
   menuCloseIcon.classList.toggle("hidden");
+  document.body.classList.toggle("overflow-hidden");
+});
+
+const menuLinks = menuWrapper.querySelectorAll("a");
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuWrapper.classList.toggle("translate-x-full");
+    menuWrapper.classList.toggle("translate-x-0");
+    menuOpenIcon.classList.toggle("hidden");
+    menuCloseIcon.classList.toggle("hidden");
+    document.body.classList.toggle("overflow-hidden");
+  });
 });
 
 const jumpToContactButton = document.getElementById("js-home-hero-contact");
