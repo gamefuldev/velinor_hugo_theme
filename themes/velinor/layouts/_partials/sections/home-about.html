@@ -1,4 +1,4 @@
-<section id="leadership" class="bg-vc-cream-1">
+<section id="about" class="bg-vc-cream-3">
   <div class="max-w-screen-xl m-auto py-16 lg:py-32 px-4">
     <h2 class="
       text-center text-black text-2xl lg:text-5xl upppercase font-bold uppercase relative 
@@ -11,12 +11,15 @@
     <div class="
       flex flex-col lg:flex-row lg:border-t lg:border-black items-center mt-16 lg:mt-24 relative
       after:hidden lg:after:block after:absolute after:top-0 after:h-full after:border-l after:border-black after:left-1/2
-      before:hidden lg:before:block before:absolute before:bottom-0 before:left-1/2 before:w-1 before:h-full lg:before:bg-gradient-to-t before:from-vc-cream-1 before:to-vc-cream-1/50 before:z-10
+      before:hidden lg:before:block before:absolute before:bottom-0 before:left-1/2 before:w-1 before:h-full lg:before:bg-gradient-to-t before:from-vc-cream-3 before:to-vc-cream-3/50 before:z-10
     ">
-      {{ $img := resources.Get (printf "img/%s" .Params.featured_image) }}
+      
       <div class="w-full lg:w-1/2 p-16 lg:p-32 border-t border-b border-black lg:border-0">
         <div class="relative aspect-square">
-          <img class="object-cover object-center absolute top-0 left-0 w-full h-full sepia-50" src="{{ $img.RelPermalink }}" alt="">
+          {{ if .Params.featured_image }}
+            {{ $img := resources.Get (printf "img/%s" .Params.featured_image) }}
+            <img class="object-cover object-center absolute top-0 left-0 w-full h-full sepia-50 bg-vc-brown-2" src="{{ $img.RelPermalink }}" alt="">
+          {{ end }}
         </div>
       </div>
 

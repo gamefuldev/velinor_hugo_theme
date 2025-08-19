@@ -1,8 +1,5 @@
 ---
-build:
-  list: never
-  publishResources: false
-  render: never
+headless: true
 featured_image: about-section-image.jpg
 ---
 

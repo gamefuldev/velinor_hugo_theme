@@ -1,9 +1,4 @@
 ---
-build:
-  list: never
-  publishResources: false
-  render: never
-list: never
-render: never
+headless: true
 featured_image: contact-section-image.jpg
 ---

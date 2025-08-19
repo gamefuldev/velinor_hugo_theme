@@ -1,12 +1,33 @@
 {{ define "main" }}
 
-  {{ $home_about_content := .Site.GetPage "/headless/home-about" }}
-  {{ $home_contact_content := .Site.GetPage "/headless/home-contact" }}
+  <!-- Hero area -->
+  {{ $hero_content := readFile "content/headless/home-hero.md" }}
+  {{ $hero_content_parts := split $hero_content "---" }}
+  {{ $hero_frontmatter := index $hero_content_parts 1 | transform.Unmarshal }}
+  {{ $hero_body := index $hero_content_parts 2 }}
+  {{ $hero_context := dict "Content" ($hero_body | markdownify) "Params" $hero_frontmatter }}
+  {{ partial "sections/home-hero.html" $hero_context }}
 
-  {{ partial "sections/home-hero.html" . }}
-  {{ partial "sections/home-about.html" $home_about_content }}
+  <!-- About area -->
+  {{ $about_content := readFile "content/headless/home-about.md" }}
+  {{ $about_content_parts := split $about_content "---" }}
+  {{ $about_frontmatter := index $about_content_parts 1 | transform.Unmarshal }}
+  {{ $about_body := index $about_content_parts 2 }}
+  {{ $about_context := dict "Content" ($about_body | markdownify) "Params" $about_frontmatter }}
+  {{ partial "sections/home-about.html" $about_context }}
+
+  <!-- Strategy area -->
   {{ partial "sections/home-strategy.html" . }}
+
+  <!-- Leadership area -->
   {{ partial "sections/home-team.html" . }}
-  {{ partial "sections/home-contact.html" $home_contact_content }}
+
+  <!-- Contact area -->
+  {{ $contact_content := readFile "content/headless/home-contact.md" }}
+  {{ $contact_content_parts := split $contact_content "---" }}
+  {{ $contact_frontmatter := index $contact_content_parts 1 | transform.Unmarshal }}
+  {{ $contact_body := index $contact_content_parts 2 }}
+  {{ $contact_context := dict "Content" ($contact_body | markdownify) "Params" $contact_frontmatter }}
+  {{ partial "sections/home-contact.html" $contact_context }}
 
 {{ end }}
