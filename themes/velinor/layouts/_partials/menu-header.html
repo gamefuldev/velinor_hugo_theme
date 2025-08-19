@@ -11,8 +11,8 @@ Renders a menu for the given menu ID styled for the header.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav class="hidden lg:block lg:w-1/2">
-    <ul class="flex gap-8 justify-center">
+  <nav class="lg:block lg:w-2/3">
+    <ul class="flex flex-col lg:flex-row gap-8 lg:justify-center">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -34,7 +34,7 @@ Renders a menu for the given menu ID styled for the header.
       {{- end }}
     {{- end }}
     <li>
-      <a class="uppercase font-bold hover:text-vc-brown-2 transition-colors duration-200"
+      <a class="uppercase font-bold lg:hover:text-vc-brown-2 transition-colors duration-200"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

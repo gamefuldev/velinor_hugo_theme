@@ -2,13 +2,25 @@ console.log(
   "This Hugo theme was developed by Gameful Software: https://www.gameful.dev"
 );
 
+const menuToggle = document.getElementById("js-main-menu-toggle");
+const menuOpenIcon = document.getElementById("js-main-menu-open-icon");
+const menuCloseIcon = document.getElementById("js-main-menu-close-icon");
+const menuWrapper = document.getElementById("js-menu-wrapper");
+
+menuToggle.addEventListener("click", () => {
+  menuWrapper.classList.toggle("translate-x-full");
+  menuWrapper.classList.toggle("translate-x-0");
+  menuOpenIcon.classList.toggle("hidden");
+  menuCloseIcon.classList.toggle("hidden");
+});
+
 const strategyToggle = document.getElementById("js-strategy-toggle-area");
 
 if (strategyToggle) {
   const headings = strategyToggle.querySelectorAll(".js-strategy-heading");
   const items = strategyToggle.querySelectorAll(".js-strategy-item");
   headings.forEach((heading, idx) => {
-    heading.addEventListener("click", function () {
+    heading.addEventListener("click", () => {
       items.forEach((item, i) => {
         const h = item.querySelector(".js-strategy-heading");
         const w = item.querySelector(".js-heading-wrapper");

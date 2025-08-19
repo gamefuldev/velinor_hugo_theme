@@ -1,23 +1,30 @@
-<header class="p-4 max-w-screen-xl m-auto relative z-20">
-  <div class="border-b-2 border-black flex gap-4 justify-between pb-4 items-center">
-    <a class="lg:w-1/4" href="{{ .Site.BaseURL }}">
+<header class="p-4 max-w-screen-xl m-auto">
+  <div class=" 
+    flex gap-4 justify-between pb-4 items-center relative z-50
+    after:absolute after:w-full after:h-1 after:left-0 after:bottom-0 after:border-b-2 after:border-black after:z-60
+  ">
+    <a class="w-full lg:w-1/3 relative z-50" href="/">
       <img src="/header-logo.svg" alt={{.Site.Title}} />
     </a>  
 
-    {{ partial "menu-header.html" (dict "menuID" "main" "page" .) }}
+    <div id="js-menu-wrapper" class="translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:relative p-4 lg:p-0 z-10 flex flex-col lg:flex-row justify-center gap-8 top-0 left-0 w-full h-full bg-vc-brown-2 lg:bg-transparent text-2xl lg:text-base">
+      
+      {{ partial "menu-header.html" (dict "menuID" "main" "page" .) }}
     
-    <nav class="hidden lg:block lg:w-1/4 lg:text-right">
-      <a class="uppercase font-bold inline-flex gap-2 group hover:text-vc-brown-2 transition-colors duration-200" href="#contact">
-        <span>
-          <span class="italic opacity-0 group-hover:opacity-25 transition-opacity duration-200">I</span><span class="italic opacity-0 group-hover:opacity-50 transition-opacity duration-200">I</span><span class="italic">I</span>
-        </span>
-        <span>Contact</span>
-      </a>
-    </nav>
+      <nav class="lg:block lg:w-1/3 lg:text-right absolute lg:relative bottom-4 lg:bottom-0 left-4 lg:left-0">
+        <a class="uppercase font-bold inline-flex gap-2 group lg:hover:text-vc-brown-2 transition-colors duration-200" href="#contact">
+          <span>
+            <span class="italic opacity-0 group-hover:opacity-25 transition-opacity duration-200 hidden lg:inline">I</span><span class="italic opacity-0 group-hover:opacity-50 transition-opacity duration-200 hidden lg:inline">I</span><span class="italic">I</span>
+          </span>
+          <span>Contact</span>
+        </a>
+      </nav>
 
-    <button class="lg:hidden">
-      <img class="block" src="/icons/hamburger.svg" alt="Open menu" />
-      <img class="hidden" src="/icons/close-menu.svg" alt="Close menu" />
+    </div>
+
+    <button id="js-main-menu-toggle" class="lg:hidden relative z-70">
+      <img id="js-main-menu-open-icon" class="block" src="/icons/hamburger.svg" alt="Open menu" />
+      <img id="js-main-menu-close-icon" class="hidden" src="/icons/close-menu.svg" alt="Close menu" />
     </button>
   </div>
   
